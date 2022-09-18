@@ -1,6 +1,6 @@
 # Finding shortests path using networkx and numpy packages
 
-## First task: Write a function which finds a shortest path with least traffic jam and returns that path.
+## Task 1 : Write a function which finds a shortest path with least traffic jam and returns that path.
 ### Starting point : (1,3) (_index_)
 ### Finish point : (4,2) (_index_)
 
@@ -13,7 +13,7 @@ I got help of networkx and numpy packages on this task, for solving the task wit
 As it is shown picture above, journey starts with the index of (1,3) and tries all possible ways to reach final point (4,2). Finally, **red** and **pink** colored arrows are chosen as candidates to be the best route. Then, program checks both roads to select one of them with less jam. And pink colored route is our winner.
 
 ---
-## Second task: Write a function which finds a shortest path to given index then to finish point with least traffic jam.
+## Task 2 : Write a function which finds a shortest path to given index then to finish point with least traffic jam.
 ### Starting point : (0,0_index_)
 ### First destination : (1,3) (_index_)
 ### Finish point : (4,2) (_index_)
@@ -25,3 +25,23 @@ In this task, requirement differs a little bit than previous one. The difference
 Returning back to the task, program is so simple for people who understood workflow of first task. The program need to find out 2 paths together(_first is from starting point to first destination, second is the from first destination to the final point_) and combine them. Process of getting paths are exactly the same separatedly as I have written in first task.
 
 According to picture above, 'taxi driver' starts from (0,0) index which is marked with green color, wants to go index of (1,3). By the help of less number of cars, red colored arrow is chosen as best route from 2 candidates (_red and yellow_). Second step is getting best 'road' to reach out index of (4,2) (_finish point_). As i wrote in first task, **pink** and **red** colored arrows are candidates. Pink colored arrow (_route_) is chosen because of containing only 6 'cars'.
+
+---
+## Task 3 : Write a function which calculates fare of journey too.
+### Starting point : (0,0_index_)
+### First destination : (1,3) (_index_)
+### Finish point : (4,2) (_index_)
+
+![sp3](https://user-images.githubusercontent.com/113797630/190911768-a5a60b63-9a0a-4ae6-ad88-d13793b73a52.png)
+---
+
+All the processes is the same as written in task 2. I will write merely calculation of fare for journey.
+
+---
+**Fare for journey = (number of cars encountered during journey) * 0.2 + steps * 0.5**
+
+---
+
+So, I have got number of cars using 'sum' variable as storage and summing all numbers which are located in the indices  given by shortest path function. As a number of steps, if we call number of index couples are returned from function as **n** then **n-1** will be number of steps which have been taken during process. And we can calculate fare for trip using formula given above. For my task, it's 7.6$.
+
+---
